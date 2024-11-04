@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "yaana"
+name = "yaana project running script"
 version = "0.1.0"
 description = ""
 authors = ["Shakhlyn <shakhlyn.sh.du@gmail.com>"]

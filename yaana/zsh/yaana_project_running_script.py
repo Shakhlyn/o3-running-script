@@ -12,10 +12,12 @@ class TerminalCommandExecutor:
 
     def _generate_commands(self):
         return [
-            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; ssh nsdev_mu; exec zsh'",
-            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; source venv/bin/activate; python manage.py runserver; exec zsh'",
-            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; {self.nvm_source} nvm use 14.21.3; npm run dev; exec zsh'",
-            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}/frontend; {self.nvm_source} nvm use 14.21.3; npm run dev; exec zsh'",
+            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; ssh nsdev_mu; exec {self.shell}'",
+            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; source venv/bin/activate; \
+                   if [ -z \"$VIRTUAL_ENV\" ]; then echo \"Failed to activate venv\"; else echo \"venv activated\"; fi; \
+                   python manage.py runserver; exec {self.shell}'",
+            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; {self.nvm_source} nvm use 14.21.3 && npm run dev; exec {self.shell}'",
+            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}/frontend; {self.nvm_source} nvm use 14.21.3 && npm run dev; exec {self.shell}'",
             f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; code .'"
         ]
 

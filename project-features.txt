@@ -1,3 +1,1 @@
-1. path of the project must be achieved from argument OR path can be achieved from the input
-2. user will also provide bash or zsh in the argument; this can also be achieved from input
-3.
+1.

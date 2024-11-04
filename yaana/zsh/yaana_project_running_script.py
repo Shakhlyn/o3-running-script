@@ -1,8 +1,9 @@
 import subprocess
 
 class TerminalCommandExecutor:
-    def __init__(self, project_path):
+    def __init__(self, project_path, shell):
         self.project_path = project_path
+        self.shell = shell
         self.nvm_source = (
             "export NVM_DIR=\"$HOME/.nvm\"; "
             "[ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\";"
@@ -11,14 +12,16 @@ class TerminalCommandExecutor:
 
     def _generate_commands(self):
         return [
-            f"gnome-terminal --tab -- zsh -c 'cd {self.project_path}; ssh nsdev_mu; exec zsh'",
-            f"gnome-terminal --tab -- zsh -c 'cd {self.project_path}; source venv/bin/activate; python manage.py runserver; exec zsh'",
-            f"gnome-terminal --tab -- zsh -c 'cd {self.project_path}; {self.nvm_source} nvm use 14.21.3; npm run dev; exec zsh'",
-            f"gnome-terminal --tab -- zsh -c 'cd {self.project_path}/frontend; {self.nvm_source} nvm use 14.21.3; npm run dev; exec zsh'",
-            f"gnome-terminal --tab -- zsh -c 'cd {self.project_path}; code .'"
+            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; ssh nsdev_mu; exec zsh'",
+            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; source venv/bin/activate; python manage.py runserver; exec zsh'",
+            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; {self.nvm_source} nvm use 14.21.3; npm run dev; exec zsh'",
+            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}/frontend; {self.nvm_source} nvm use 14.21.3; npm run dev; exec zsh'",
+            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; code .'"
         ]
 
     def execute_commands(self):
         for cmd in self.commands:
-            subprocess.run(cmd, shell=True)
-
+            try:
+                subprocess.run(cmd, shell=True)
+            except Exception as e:
+                print(f"Error executing command: {cmd}\n{e}")

@@ -1,0 +1,86 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# If using a local environment variables file
+.env
+
+# Ignore virtual environments
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# macOS files
+.DS_Store
+
+# System files
+Thumbs.db
+
+# Test results
+*.cover
+coverage.*
+.coverage
+.tox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+
+# MyPy type checker
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Pylint
+.pylint.d/
+
+# Caches
+*.pyo
+*.pyd
+*.pdb
+*.egg-info
+.idea/
+.vscode/
+
+# Django migrations
+**/migrations/*
+
+# Node.js dependencies
+node_modules/
+
+# If using docker
+*.env
+Dockerfile
+docker-compose.yml
+
+# JetBrains (PyCharm, etc)
+.idea/
+
+# VS Code settings
+.vscode/
+
+# Ignore build output
+build/
+dist/
+
+# Ignore compiled libraries
+*.so
+
+# Files to ignore for Django deployments
+*.pid
+*.pid.lock

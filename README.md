@@ -36,7 +36,7 @@ Ensure that you have the following installed:
    ```
 
 
-### N.B: If you have run the o3 project before, skip the step 3
+### N.B.: If you have run the o3 project before, skip the step 3
 3. (Skip this step if you have already run the o3 project) **Install project dependencies**:
    Ensure that any Node.js dependencies are installed by running:
    ```bash
@@ -63,7 +63,7 @@ or,
 nano ~/.zshrc
 ```
 - Add an alias:
-Add manually an alias in your `.zshrc` or `.bashrc` file.
+Add an alias manually in your `.zshrc` or `.bashrc` file.
 
 OR,
 After cloning this script project, from the root directory:

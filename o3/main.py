@@ -1,6 +1,6 @@
 import os
 
-from zsh.yaana_project_running_script import TerminalCommandExecutor
+from zsh.commands import TerminalCommandExecutor
 from zsh.settings import Environments
 
 if __name__ == "__main__":

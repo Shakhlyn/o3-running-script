@@ -28,6 +28,9 @@ ENV/
 # System files
 Thumbs.db
 
+# Local config file for the project
+o3/zsh/config.txt
+
 # Test results
 *.cover
 coverage.*

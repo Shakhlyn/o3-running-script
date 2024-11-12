@@ -2,16 +2,17 @@ import os
 
 class Environments(object):
 
-    def _get_shell(self):
+    @staticmethod
+    def _get_shell():
             return os.getenv('SHELL')
 
-    def _get_project_path(self):
+    @staticmethod
+    def _get_project_path():
         return os.getcwd()
 
     def get_envs(self):
         try:
             project_path = self._get_project_path()
-
             shell_name = self._get_shell()
 
             if shell_name:

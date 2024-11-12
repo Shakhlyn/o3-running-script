@@ -1,9 +1,10 @@
 import subprocess
 
 class TerminalCommandExecutor:
-    def __init__(self, project_path, shell):
+    def __init__(self, project_path, shell, ide):
         self.project_path = project_path
         self.shell = shell
+        self.ide = ide
         self.nvm_source = (
             "export NVM_DIR=\"$HOME/.nvm\"; "
             "[ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\";"
@@ -18,7 +19,7 @@ class TerminalCommandExecutor:
                    python manage.py runserver; exec {self.shell}'",
             f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; {self.nvm_source} nvm use 14.21.3 && npm run dev; exec {self.shell}'",
             f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}/frontend; {self.nvm_source} nvm use 14.21.3 && npm run dev; exec {self.shell}'",
-            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; code .'"
+            f"gnome-terminal --tab -- {self.shell} -c 'cd {self.project_path}; {self.ide}'"
         ]
 
     def execute_commands(self):

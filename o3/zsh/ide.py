@@ -9,7 +9,8 @@ class IDE:
         self.ides = {
             "1": 'webstorm .',
             "2": 'code .',
-            "3": f'{self._get_pycharm_path()} .',
+            # "3": f'{self._get_pycharm_path()} .',
+            "3": "",
         }
         self.ide_codes = ['1', '2', '3']
 
@@ -48,14 +49,14 @@ class IDE:
         # find the path of pycharm
         print("\U0001F914 Ha! Path is not saved!\n"
               "\t\t\U0001F50E We are trying to locate the pycharm bin file\n"
-              "\t\t Please wait for a moment ...\n"
-              "\n\U0001F4DD Writing the path")
+              "\t\t Please wait for a moment ...\n")
 
         result = subprocess.run(["find", "/", "-name", "pycharm.sh"], capture_output=True, text=True)
         pycharm_path = result.stdout.strip().splitlines()[0] if result.stdout else None
 
         if pycharm_path:
             with open(self.config_file, 'w') as file:
+                print("\n\U0001F4DD Writing the path")
                 file.write(pycharm_path)
                 print("\U0001F44F Hurrah! The path has been saved!")
             return pycharm_path
@@ -80,9 +81,9 @@ class IDE:
     def get_ide(self):
         try:
             ide_code = self._get_ide_code()
-            if ide_code:
-                return self.ides[ide_code]
-            else:
-                return "No ide found!"
+
+            if ide_code == "3":
+                self.ides["3"] = f"{self._get_pycharm_path()} ."
+            return self.ides[ide_code] if ide_code in self.ides else "No IDE found!"
         except:
             raise ValueError("No IDE code found. Please contact me.")

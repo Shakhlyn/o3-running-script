@@ -75,7 +75,7 @@ Ensure that you have the following installed:
    ```bash
    git@github.com:Shakhlyn/o3-running-script.git
    ```
-   Go inside the project directory:
+   Navigate to the project directory using the following command:
    ```bash
    cd o3-running-script
    ```
@@ -142,8 +142,8 @@ Just kidding!!!
 or not.
 ## Usage
 
-1. **Go to the yaana project**
-2. **In the root directory, Run the command**
+- **Navigate to the yaana project's root directory**
+- **In the root directory, Run the command**
 
 ```bash
 runyaana

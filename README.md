@@ -25,6 +25,9 @@ Ensure that you have the following installed:
 
 0. **Prerequisite(s)**  
     N.B.: If you have poetry installed in your system, ignore this `step 0`.
+   
+      ## N.B: Since no package is used in this project, you don't need to run it in any virtual environment. However, it is suggested that you not run any project without virtual environment.
+   
    1. **poetry**:
       - #### Step 1: Update Your System
           - Open a terminal 
@@ -81,6 +84,9 @@ Ensure that you have the following installed:
    ```
 
 2. ### **Set up Python virtual environment**:
+
+   **N.B.: If you didn't install poetry, you don't need to initiate a virtual.**
+
    ```bash
    poetry shell
    ```
@@ -89,7 +95,6 @@ Ensure that you have the following installed:
    ```
 
 
-   **N.B.: If you have run the o3 project before, skip the step 3**
 3. ### (Skip this step if you have already run the o3 project) **Install project dependencies**:
    Ensure that any Node.js dependencies are installed by running:
    ```bash
@@ -125,7 +130,7 @@ OR,
 After cloning this, from the root directory of this script-running project:
 In the terminal, type
 ```bash
-echo "alias runyaana=\"python3 $(pwd)/o3/o3/main.py\"" >> ~/.zshrc 
+echo "alias runyaana=\"python3 $(pwd)/o3/main.py\"" >> ~/.zshrc 
 ```
 
 Now you need to apply the changes to your shell:

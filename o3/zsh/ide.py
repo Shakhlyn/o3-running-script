@@ -11,8 +11,9 @@ class IDE:
             "2": 'code .',
             # "3": f'{self._get_pycharm_path()} .',
             "3": "",
+            "4": 'idea .'
         }
-        self.ide_codes = ['1', '2', '3']
+        self.ide_codes = ['1', '2', '3', '4']
 
 
     @staticmethod
@@ -29,7 +30,8 @@ class IDE:
             
             1: WebStorm
             2: VS Code
-            3: PyCharm            
+            3: PyCharm
+            4: IntelliJ
             """)
 
 

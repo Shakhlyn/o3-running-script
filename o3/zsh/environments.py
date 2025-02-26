@@ -8,6 +8,12 @@ class Environments(object):
 
     @staticmethod
     def _get_project_path():
+        """
+        since we are running the project after going to the project directory, 'getcwd' is perfect.
+        However, for dynamic path, we need to update the logic
+
+        :return: the current directory
+        """
         return os.getcwd()
 
     def get_envs(self):

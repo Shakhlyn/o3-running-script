@@ -1,14 +1,19 @@
-import os
+import sys
 
 from zsh.commands import TerminalCommandExecutor
-from zsh.settings import Environments
+from zsh.environments import Environments
 from zsh.ide import IDE
+from zsh.vpn import VpnSetting
 
 if __name__ == "__main__":
 
     try:
         ide = IDE()
         settings = Environments()
+        vpn_settings = VpnSetting()
+
+        # configure the vpn first
+        vpn_settings.run_vpn()
 
         ide = ide.get_ide()
         [shell, project_path] = settings.get_envs()

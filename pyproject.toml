@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "yaana project running script"
-version = "0.1.0"
-description = ""
+name = "o3-running-script"
+version = "1.2"
+description = "This is a python script to run the Yaana o3 project and configure the OVPN3"
 authors = ["Shakhlyn <shakhlyn.sh.du@gmail.com>"]
 readme = "README.md"
 

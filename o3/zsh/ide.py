@@ -10,11 +10,9 @@ class IDE:
             "1": 'webstorm .',
             "2": 'code .',
             # "3": f'{self._get_pycharm_path()} .',
-            "3": 'pycharm .',
+            "3": '',
             "4": 'idea .'
         }
-        self.ide_codes = ['1', '2', '3', '4']
-
 
     @staticmethod
     def _get_config_file_path():
@@ -26,7 +24,7 @@ class IDE:
     def _take_input_for_ide_code():
         return input("""
         Please select the IDE you want to use for coding:
-            Type 1, 2, or 3 and press Enter.
+            Type 1, 2, 3, or 4 and press Enter.
             
             1: WebStorm
             2: VS Code
@@ -70,11 +68,11 @@ class IDE:
     def _get_ide_code(self):
         ide_code = self._take_input_for_ide_code()
 
-        while ide_code not in self.ide_codes:
+        while ide_code not in self.ides:
             print(""""
             \n\t \U0001F914 I assume you don't like these ides!"
-            \U0001F614 Unfortunately, currently we only support these three ides.      
-                  \n\U0001F449 Please select 1 or 2 or 3.
+            \U0001F614 Unfortunately, currently we only support these four IDEs.      
+                  \n\U0001F449 Please select 1 or 2 or 3 or 4.
                   If you like to use other ides, please let me know. I'll  be happy \U0001F603 to extend""")
             ide_code = self._take_input_for_ide_code()
 

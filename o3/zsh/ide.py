@@ -10,7 +10,7 @@ class IDE:
             "1": 'webstorm .',
             "2": 'code .',
             # "3": f'{self._get_pycharm_path()} .',
-            "3": "",
+            "3": 'pycharm .',
             "4": 'idea .'
         }
         self.ide_codes = ['1', '2', '3', '4']
@@ -61,6 +61,7 @@ class IDE:
                 print("\n\U0001F4DD Writing the path")
                 file.write(pycharm_path)
                 print("\U0001F44F Hurrah! The path has been saved!")
+                print(f"\U0001F603 Pycharm path: {pycharm_path}")
             return pycharm_path
         else:
             raise FileNotFoundError("PyCharm not found. Please check the installation path.")

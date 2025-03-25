@@ -38,3 +38,6 @@ htmlcov/
 .pytest_cache/
 .tox/
 
+
+#local configuration file
+config.txt

@@ -10,8 +10,9 @@ class IDE:
             "1": 'webstorm .',
             "2": 'code .',
             # "3": f'{self._get_pycharm_path()} .',
-            "3": '',
-            "4": 'idea .'
+            "3": 'pycharm-community .',
+            "4": "",
+            "5": 'idea .'
         }
 
     @staticmethod
@@ -24,12 +25,13 @@ class IDE:
     def _take_input_for_ide_code():
         return input("""
         Please select the IDE you want to use for coding:
-            Type 1, 2, 3, or 4 and press Enter.
+            Type 1, 2, 3, 4, or 5 and press Enter.
             
             1: WebStorm
             2: VS Code
-            3: PyCharm
-            4: IntelliJ
+            3: PyCharm (Community)
+            4: PyCharm (Professional)
+            5: IntelliJ
             """)
 
 
@@ -83,8 +85,8 @@ class IDE:
         try:
             ide_code = self._get_ide_code()
 
-            if ide_code == "3":
-                self.ides["3"] = f"{self._get_pycharm_path()} ."
+            if ide_code == "4":
+                self.ides["4"] = f"{self._get_pycharm_path()} ."
             return self.ides[ide_code] if ide_code in self.ides else "No IDE found!"
         except:
             raise ValueError("No IDE code found. Please contact me.")

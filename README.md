@@ -26,7 +26,7 @@ Ensure that you have the following installed:
 0. **Prerequisite(s)**  
     N.B.: If you have poetry installed in your system, ignore this `step 0`.
    
-      ## N.B: Since no package is used in this project, you don't need to run it in any virtual environment. However, it is suggested that you not run any project without virtual environment.
+      ## N.B: Since no package is used in this project, you don't need to run it in any virtual environment. However, it is suggested that you run a project using a virtual environment.
    
    1. **poetry**:
       - #### Step 1: Update Your System
@@ -50,7 +50,7 @@ Ensure that you have the following installed:
           ```bash
           vim ~/.zshrc
           ```        
-         🤔 `vim` is not installed! How will you use nano? 😏Install `vim` or `emac`.  
+         🤔 `vim` is not installed! Why do you use nano? 😏Install `vim` or `emac`.  
       Just kidding!!! Use nano. 😃
           ```bash
           nano ~/.zshrc
@@ -59,6 +59,7 @@ Ensure that you have the following installed:
           ```bash
           export PATH="$HOME/.local/bin:$PATH"
           ```
+        `N.B.:, you must try `vim`. Actually, you should integrate `vim` in your favourite IDE. Believe me, you'll love it.`
       
        - #### Step 4: Apply the changes to your shell:
           ```bash
@@ -85,7 +86,7 @@ Ensure that you have the following installed:
 
 2. ### **Set up Python virtual environment**:
 
-   **N.B.: If you didn't install poetry, you don't need to initiate a virtual.**
+   **N.B.: If you didn't install poetry, you don't need to initiate a virtual env.**
 
    ```bash
    poetry shell

@@ -1,12 +1,23 @@
-import sys
+import argparse
 
 from zsh.commands import TerminalCommandExecutor
 from zsh.environments import Environments
 from zsh.ide import IDE
 from zsh.vpn import VpnSetting
 
-if __name__ == "__main__":
 
+def parse_args():
+    parser = argparse.ArgumentParser(description="Run Yaana script")
+
+    parser.add_argument("--ide", type=str, default="webstorm", help="Default IDE")
+    parser.add_argument("--pr", type=str, default="fe", help="Default project--either 'Backend(be)' or 'Frontend(fe)'")
+    args = parser.parse_args()
+
+    default_ide, default_pr = args.ide, args.pr
+    return default_ide, default_pr
+
+
+def main():
     try:
         ide = IDE()
         settings = Environments()
@@ -30,3 +41,8 @@ if __name__ == "__main__":
         print(f"Input Error: {ve}")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+
+
+if __name__ == "__main__":
+    main()
+

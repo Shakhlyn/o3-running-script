@@ -4,7 +4,8 @@ from importlib import resources
 
 
 class IDE:
-    def __init__(self):
+    def __init__(self, preferred_ide):
+        self.preferred_ide = preferred_ide
         self.config_file = self._get_config_file_path()
         self.ides = {
             "1": 'webstorm .',
@@ -82,6 +83,9 @@ class IDE:
 
 
     def get_ide(self):
+        if self.preferred_ide:
+            return self.preferred_ide
+
         try:
             ide_code = self._get_ide_code()
 
